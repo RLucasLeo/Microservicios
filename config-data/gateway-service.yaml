@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 eureka:
   client:
     fetch-registry: true
@@ -10,21 +11,27 @@ eureka:
     hostname: localhost
 
 spring:
+  application:
+    name: gateway-service
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
       routes:
-        - id: usuario-service
-          uri: lb://usuario-service
+        - id: USUARIO-SERVICE
+          uri: lb://USUARIO-SERVICE
           predicates:
             - Path=/usuario/**
-        - id: auto-service
-          uri: lb://auto-service
+        - id: AUTO-SERVICE
+          uri: lb://AUTO-SERVICE
           predicates:
             - Path=/auto/**
-        - id: moto-service
-          uri: lb://moto-service
+        - id: MOTO-SERVICE
+          uri: lb://MOTO-SERVICE
           predicates:
             - Path=/moto/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
