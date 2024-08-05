@@ -6,8 +6,8 @@ eureka:
     register-with-eureka: true
     service-url:
       default-zone: http://localhost:8761/eureka
-    instance:
-      hostnmae: localhost
+  instance:
+    hostname: localhost
 
 spring:
   cloud:
@@ -15,16 +15,16 @@ spring:
       discovery:
         locator:
           enabled: true
-        routes:
-          - id: usuario-service
-            uri: lb://usuario-service
-            predicates:
-              - Path=/usuario/**
-          - id: auto-service
-            uri: lb://Auto-service
-            predicates:
-              - Path=/Auto/**
-          - id: moto-service
-            uri: lb://Moto-service
-            predicates:
-              - Path=/Moto/**
+      routes:
+        - id: usuario-service
+          uri: lb://usuario-service
+          predicates:
+            - Path=/usuario/**
+        - id: auto-service
+          uri: lb://auto-service
+          predicates:
+            - Path=/auto/**
+        - id: moto-service
+          uri: lb://moto-service
+          predicates:
+            - Path=/moto/**
