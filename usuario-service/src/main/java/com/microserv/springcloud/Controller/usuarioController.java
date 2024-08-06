@@ -107,7 +107,7 @@ public class usuarioController {
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<List<Carro>> fallbackSaveCarros(@PathVariable("usuarioId") Integer id, @RequestBody Carro carro, RuntimeException exception){
+    private ResponseEntity<Carro> fallbackSaveCarros(@PathVariable("usuarioId") Integer id, @RequestBody Carro carro, RuntimeException exception){
         return new ResponseEntity("El usuario: "+ id + " no tiene suficiente dinero para guardar el auto en el garage", HttpStatus.OK);
     }
 
@@ -117,12 +117,12 @@ public class usuarioController {
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<List<Moto>> fallbackSaveMotos(@PathVariable("usuarioId") Integer id, @RequestBody Moto moto, RuntimeException exception){
+    private ResponseEntity<Moto> fallbackSaveMotos(@PathVariable("usuarioId") Integer id, @RequestBody Moto moto, RuntimeException exception){
         return new ResponseEntity("El usuario: "+ id + " no tiene suficiente dinero para guardar la motocicleta en el garage", HttpStatus.OK);
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<List<Moto>> fallbackGetTodos(@PathVariable("usuarioId") Integer id, RuntimeException exception){
+    private ResponseEntity<Map<String, Object>> fallbackGetTodos(@PathVariable("usuarioId") Integer id, RuntimeException exception){
         return new ResponseEntity("El usuario: "+ id + " tiene todos los vehiculos en mantenimiento", HttpStatus.OK);
     }
 

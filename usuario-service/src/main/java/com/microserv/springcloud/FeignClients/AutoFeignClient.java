@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.microserv.springcloud.Models.Auto;
 
-@FeignClient(name = "auto-service")
+@FeignClient(name = "carro-service")
 @RequestMapping("/Carro")
 public interface AutoFeignClient {
 
