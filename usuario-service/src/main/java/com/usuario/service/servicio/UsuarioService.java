@@ -43,11 +43,13 @@ public class UsuarioService {
 		return nuevoUsuario;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Carro> getCarros(int usuarioId) {
 		List<Carro> carros = restTemplate.getForObject("http://localhost:8002/carro/usuario/" + usuarioId, List.class);
 		return carros;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Moto> getMotos(int usuarioId) {
 		List<Moto> motos = restTemplate.getForObject("http://localhost:8003/moto/usuario/" + usuarioId, List.class);
 		return motos;
