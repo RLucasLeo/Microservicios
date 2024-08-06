@@ -29,7 +29,7 @@ public class usuarioService {
 //Aqui utilizamos RestTemplate
     public List<Auto> getAutos(Integer usuarioId){
         @SuppressWarnings("unchecked")
-        List<Auto> autos = restTemplate.getForObject("http://localhost:8081/Auto/usuario/" + usuarioId, List.class);
+        List<Auto> autos = restTemplate.getForObject("http://localhost:8081/Carro/usuario/" + usuarioId, List.class);
         return autos;
     }
 
