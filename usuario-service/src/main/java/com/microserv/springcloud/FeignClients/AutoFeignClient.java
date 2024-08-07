@@ -18,7 +18,7 @@ public interface AutoFeignClient {
     @PostMapping
     public Auto save(@RequestBody Auto auto);
 
-     @GetMapping("/usuario/{usuarioId}")
+    @GetMapping("/usuario/{usuarioId}")
     public List<Auto> getAutos(@PathVariable("usuarioId") Integer usuarioId);
 
 }

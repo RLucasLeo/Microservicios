@@ -29,13 +29,13 @@ public class usuarioService {
 //Aqui utilizamos RestTemplate
     public List<Auto> getAutos(Integer usuarioId){
         @SuppressWarnings("unchecked")
-        List<Auto> autos = restTemplate.getForObject("http://carro-service/Carro/usuario/" + usuarioId, List.class);
+        List<Auto> autos = restTemplate.getForObject("http://carro-service/carro/usuario/" + usuarioId, List.class);
         return autos;
     }
 
     public List<Moto> getMotos(Integer usuarioId){
         @SuppressWarnings("unchecked")
-        List<Moto> motos = restTemplate.getForObject("http://moto-service/Moto/usuario/" + usuarioId, List.class);
+        List<Moto> motos = restTemplate.getForObject("http://moto-service/moto/usuario/" + usuarioId, List.class);
         return motos;
     }
 //Aqui utilizamos FeignClient
