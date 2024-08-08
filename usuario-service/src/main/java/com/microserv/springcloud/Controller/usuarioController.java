@@ -102,27 +102,26 @@ public class usuarioController {
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<List<Carro>> fallbackGetCarros(@PathVariable("usuarioId") Integer id, RuntimeException exception){
+    private ResponseEntity<List<Carro>> fallbackGetCarros( Integer id, Throwable throwable){
         return new ResponseEntity("El usuario: "+ id + " tiene los carros en mantenimiento", HttpStatus.OK);
     }
-
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<Carro> fallbackSaveCarros(@PathVariable("usuarioId") Integer id, @RequestBody Carro carro, RuntimeException exception){
-        return new ResponseEntity("El usuario: "+ id + " no tiene suficiente dinero para guardar el auto en el garage", HttpStatus.OK);
+    private ResponseEntity<Auto> fallbackSaveCarros(Integer usuarioId, Auto auto, Throwable throwable){
+        return new ResponseEntity("El usuario: " + usuarioId + " no tiene suficiente dinero para guardar el auto en el garage", HttpStatus.OK);
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<List<Moto>> fallbackGetMotos(@PathVariable("usuarioId") Integer id, RuntimeException exception){
+    private ResponseEntity<List<Moto>> fallbackGetMotos(@PathVariable("usuarioId") Integer id, Throwable throwable){
         return new ResponseEntity("El usuario: "+ id + " tiene las motocicletas en mantenimiento", HttpStatus.OK);
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<Moto> fallbackSaveMotos(@PathVariable("usuarioId") Integer id, @RequestBody Moto moto, RuntimeException exception){
+    private ResponseEntity<Moto> fallbackSaveMotos(Integer id,Moto moto, Throwable throwable){
         return new ResponseEntity("El usuario: "+ id + " no tiene suficiente dinero para guardar la motocicleta en el garage", HttpStatus.OK);
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<Map<String, Object>> fallbackGetTodos(@PathVariable("usuarioId") Integer id, RuntimeException exception){
+    private ResponseEntity<Map<String, Object>> fallbackGetTodos(Integer id,Throwable throwablen){
         return new ResponseEntity("El usuario: "+ id + " tiene todos los vehiculos en mantenimiento", HttpStatus.OK);
     }
 
