@@ -13,7 +13,6 @@ import com.microserv.springcloud.Entity.usuario;
 import com.microserv.springcloud.Models.Auto;
 import com.microserv.springcloud.Models.Moto;
 import com.microserv.springcloud.Service.usuarioService;
-import com.usuario.service.modelos.Carro;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
@@ -102,12 +101,12 @@ public class usuarioController {
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<List<Carro>> fallbackGetCarros(@PathVariable("usuarioId") Integer id, RuntimeException exception){
+    private ResponseEntity<List<Auto>> fallbackGetCarros(@PathVariable("usuarioId") Integer id, RuntimeException exception){
         return new ResponseEntity("El usuario: "+ id + " tiene los carros en mantenimiento", HttpStatus.OK);
     }
 
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
-    private ResponseEntity<Carro> fallbackSaveCarros(@PathVariable("usuarioId") Integer id, @RequestBody Carro carro, RuntimeException exception){
+    private ResponseEntity<Auto> fallbackSaveCarros(@PathVariable("usuarioId") Integer id, @RequestBody Auto carro, RuntimeException exception){
         return new ResponseEntity("El usuario: "+ id + " no tiene suficiente dinero para guardar el auto en el garage", HttpStatus.OK);
     }
 
